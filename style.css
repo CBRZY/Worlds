@@ -1,0 +1,279 @@
+/*
+    Theme Name:     Worlds
+    Theme URI:      https://wordpress.org/
+    Author:         CBRZY
+    Author URI:     https://cbrzy.com/
+    Description:    Theme used for a landing page in a WordPress Multisite Network
+    Version:        0.4
+    License:        GNU General Public License v2 or later
+    License URI:    http://www.gnu.org/licenses/gpl-2.0.html
+    Tags:           Wordpress, Dark, Landing Page, Single Page, Links
+    Text Domain:    worlds
+*/
+@font-face {
+  font-family: 'oh_wonder_uprightregular';
+  src: url('assets/fonts/OhWonder/ohwonderupright-regular-webfont.woff2') format('woff2'),
+       url('assets/fonts/OhWonder/ohwonderupright-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'jennifer_lynneregular';
+  src: url('assets/fonts/JenniferLynne/jennifer_lynne-webfont.woff2') format('woff2'),
+       url('assets/fonts/JenniferLynne/jennifer_lynne-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+/*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+  background: #333;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+
+/* START Video Style */
+.background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.foreground,
+.background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.background img{
+  width: 100%; 
+  height: auto;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 10px;
+}
+/* END Video Style */
+  
+
+/* START Main Heading/Logo Style */
+h1.main-heading{
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  font-size: 48px;
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: jennifer_lynneregular;
+  font-weight: bold;
+  text-align: center;
+}
+
+.centered {
+  margin-top: 25px;
+  height: auto;
+  position: fixed;
+  top: 0;
+  max-width: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* END Main Heading/Logo Style */
+
+
+/* START Footer Styles */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  line-height: 50px;
+  height: 50px;
+  background-color: rgba(10,10,10,0.7);
+}
+
+.copyright {
+  color: #ffffff;
+  float: left;
+  padding-left: 2em;
+  margin: 0;
+  opacity: .7;
+  font-size: .9em;
+}
+
+.footer-social {
+  float: right;
+  padding-left: 2em;
+  margin: 0;
+  opacity: .7;
+  font-size: .9em;
+}
+
+#ig-social a {
+  float: right;
+  font-size:18px;
+  margin-left:10px;
+  margin-right:10px;
+  line-height:51px;
+}
+
+#ig-social i {
+  color: #ffffff;
+}
+
+#ig-social i:hover{
+  transition: all 0.3s ease 0s;
+  -webkit-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+}
+
+#ig-social i.icon-mail-footer:hover {
+  color: #fe7c24;
+}
+#ig-social i.icon-facebook-footer:hover {
+  color: #3c5a98;
+}
+#ig-social i.icon-twitter-footer:hover {
+  color: #2fb9fc;
+}
+#ig-social i.icon-instagram-footer:hover {
+  color: #91795e;
+}
+#ig-social i.icon-pinterest-footer:hover {
+  color: #bd081c;
+}
+#ig-social i.icon-bloglovin-footer:hover {
+  color: #000000;
+}
+#ig-social i.icon-googleplus-footer:hover {
+  color: #de4e43;
+}
+#ig-social i.icon-tumblr-footer:hover {
+  color: #36465d;
+}
+#ig-social i.icon-youtube-footer:hover {
+  color: #ff0000;
+}
+#ig-social i.icon-dribbble-footer:hover {
+  color: #e84c88;
+}
+#ig-social i.icon-soundcloud-footer:hover {
+  color: #fe7c24;
+}
+#ig-social i.icon-vimeo-footer:hover {
+  color: #1ab7ea;
+}
+#ig-social i.icon-linkedin-footer:hover {
+  color: #0077b5;
+}
+#ig-social i.icon-rss-footer:hover {
+  color: #fa842e;
+}
+#ig-social i.icon-snapchat-footer:hover {
+  color: #fffc00;
+}
+#ig-social i.icon-tripadvisor-footer:hover {
+  color: #00a680;
+}
+#ig-social i.icon-houzz-footer:hover {
+  color: #7ac143;
+}
+/* END Footer Styles */
+
+
+
+/* DIFFERENT MEDIA SIZES*/ 
+@media (min-aspect-ratio: 16/9) {
+  .foreground iframe { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .foreground iframe { width: 300%; left: -100%; }
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## smartphones landscapes + tablets portrait + landscape
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media only screen 
+and (min-device-width: 321px)
+and (max-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: portrait) {
+  .background img{
+    width: auto; 
+    height: 100%;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .background-video{
+    visibility: hidden;
+  }
+
+  .footer {
+    height: 55px;
+  }
+
+  .footer-social {
+    text-align: center;
+  }
+  
+  #ig-social a {
+    float: right;
+    font-size:40px;
+  }
+}
+@media only screen 
+and (min-device-width: 321px)
+and (max-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: landscape) {
+  .background img{
+    width: 100%; 
+    height: auto;
+    
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .background-video{
+    visibility: hidden;
+  }
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## laptops
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media screen 
+and (min-device-width: 1201px) 
+and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1) { 
+}
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## desktops
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media only screen and (min-width: 1600px) {
+}
+

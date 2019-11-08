@@ -1,0 +1,199 @@
+#worlds {  
+    margin: auto;
+    height: 300px;
+    position: fixed;
+    top: 65%;
+    width: 80%;
+    overflow:hidden;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding-top: 50px;
+
+}
+
+.world {
+    width: 350px;
+    height: 200px;
+    box-sizing: border-box;
+    border: 1px black solid;
+    border-radius: 10%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    
+    img { width: 100%; height: auto; }
+}
+
+.world:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+.worldImage {
+  position: absolute;
+  /* Make sure Image is behind text */
+  z-index: -1;
+
+  width: 120%; 
+  height: auto;
+
+  margin-left: -10%;
+  margin-top: -10%;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.worldLeft{
+  position: absolute;
+  left: 0;
+}
+
+.worldCenter{
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.worldRight{
+  position: absolute;
+  right: 0;
+}
+
+.worldTextLeft,
+.worldTextRight,
+.worldTextCentre {
+  letter-spacing: 3px;
+  color: #fff;
+  font-family: jennifer_lynneregular;
+  font-weight: bold;
+  text-align: center;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+  
+  
+/* Animations that change the transform causes previous transforms to be void */
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.1);
+    transform: translatey(-35px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.8);
+    transform: translatey(0px);
+  }
+}
+
+a.disabled {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* DIFFERENT MEDIA SIZES*/ 
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## smartphones landscapes + tablets portrait + landscape
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media only screen 
+and (min-device-width: 321px)
+and (max-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: portrait) {
+  #worlds {
+    top: 20%;
+    height: 100%;
+  }
+
+  .world{
+    width: 80%;
+    height: 20%;
+  }
+
+  .worldLeft{
+    top: 0%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .worldCenter{
+    top: 25%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .worldRight{
+    top: 50%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
+
+@media only screen 
+and (min-device-width: 321px)
+and (max-device-width: 1200px) 
+and (-webkit-min-device-pixel-ratio: 1)
+and (orientation: landscape) {
+
+  #worlds {
+    top: 25%;
+    height: 100%;
+  }
+
+  .world{
+    width: 30%;
+  }
+
+  .worldLeft{
+    position: absolute;
+    left: 0;
+  }
+  
+  .worldCenter{
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .worldRight{
+    position: absolute;
+    right: 0;
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## laptops
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media screen 
+and (min-device-width: 1201px) 
+and (max-device-width: 1600px) 
+and (-webkit-min-device-pixel-ratio: 1) { 
+  #worlds {
+    top: 55%;
+  }
+}
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+## desktops
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -*/
+@media only screen and (min-width: 1600px) {
+
+}
